@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurumsal | İstem Sigorta</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>İstem Sigorta</h1>
+      <button id="menu-toggle" class="hamburger">&#9776;</button>
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Kurumsal</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="teklif.html">Teklif Al</a></li>
+          <li><a href="contact.html" class="active">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Kurumsal</h2>
+      <p>
+        İstem Sigorta, bireylerin ve işletmelerin risklerini güvence altına almak amacıyla kurulmuş, 
+        sektörde güvenilirliği ve müşteri memnuniyeti ile öne çıkan bir sigorta acentesidir.
+      </p>
+
+      <h3>Vizyonumuz</h3>
+      <p>
+        Türkiye’nin en güvenilir sigorta danışmanı olmak, dijital çözümlerle herkese ulaşmak.
+      </p>
+
+      <h3>Misyonumuz</h3>
+      <p>
+        Müşterilerimize ihtiyaçlarına özel, hızlı ve güvenilir sigorta çözümleri sunmak.
+      </p>
+
+      <h3>Değerlerimiz</h3>
+      <ul>
+        <li>Güvenilirlik</li>
+        <li>Müşteri Odaklılık</li>
+        <li>Şeffaflık</li>
+        <li>Sürekli Gelişim</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 İstem Sigorta. Tüm hakları saklıdır.Selçuk GÜNDÜÇ tarafından geliştirilmiş bir sitedir.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+  
+      toggle.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+      });
+    });
+  </script>
+  
+</body>
+</html>

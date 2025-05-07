@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teşekkürler | İstem Sigorta</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>İstem Sigorta</h1>
+      <button id="menu-toggle" class="hamburger">&#9776;</button>
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Kurumsal</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="teklif.html">Teklif Al</a></li>
+          <li><a href="contact.html" class="active">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="thank-you">
+      <h2>Teşekkürler!</h2>
+      <p>Formunuz başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.</p>
+      <a href="index.html" class="button">Ana Sayfaya Dön</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 İstem Sigorta. Tüm hakları saklıdır.Selçuk GÜNDÜÇ tarafından geliştirilmiş bir sitedir.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+  
+      toggle.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+      });
+    });
+  </script>
+  
+</body>
+</html>

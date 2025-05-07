@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İstem Sigorta | Ana Sayfa</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <h1>İstem Sigorta</h1>
+      <button class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="mobile-nav" class="mobile-nav">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Kurumsal</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="teklif.html">Teklif Al</a></li>
+          <li><a href="contact.html" class="active">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  
+  
+  
+
+  <main>
+    <section class="hero">
+      <h2>Sigortada Güvenin Adı</h2>
+      <p>İstem Sigorta ile geleceğinizi güvence altına alın.</p>
+      <a href="teklif.html" class="btn">Hemen Teklif Al</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>© 2025 İstem Sigorta. Tüm hakları saklıdır.Selçuk GÜNDÜÇ tarafından geliştirilmiş bir sitedir.</p>
+      
+      <div class="footer-links">
+        <a href="contact.html">📞 Bize Ulaşın</a>
+  
+        <a href="https://instagram.com/istem.sigorta" target="_blank" aria-label="Instagram">
+          <img src="img/instagram-icon.svg" alt="Instagram" class="footer-icon" />
+        </a>
+  
+        <a href="https://wa.me/905345244687" target="_blank" aria-label="WhatsApp">
+          <img src="img/whatsapp-icon.svg" alt="WhatsApp" class="footer-icon" />
+        </a>
+  
+        <a href="https://maps.app.goo.gl/Ltinf5Ftr7VMtA1q7" target="_blank" aria-label="Google Maps">
+          <img src="img/maps-icon.svg" alt="Google Maps" class="footer-icon" />
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+  
+      toggle.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+      });
+    });
+  </script>
+  
+</body>
+</html>

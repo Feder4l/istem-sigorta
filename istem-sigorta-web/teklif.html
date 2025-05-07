@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teklif Al | İstem Sigorta</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <script>
+    function showFields() {
+      const sigortaTipi = document.querySelector("select[name='sigorta_tipi']").value;
+      const aracPlakasiField = document.getElementById('arac-plakasi');
+      const digerBilgilerField = document.getElementById('diger-bilgiler');
+  
+      // Araç bilgisi istenen sigorta türleri
+      if (sigortaTipi === 'Kasko' || sigortaTipi === 'Trafik') {
+        aracPlakasiField.style.display = 'block';
+      } else {
+        aracPlakasiField.style.display = 'none';
+      }
+  
+      // Diğer bilgilerin isteneceği sigorta türleri
+      if (['Sağlık', 'Tamamlayıcı Sağlık', 'Hayat', 'Konut', 'DASK', 'İşyeri', 'Seyahat', 'Nakliyat', 'Mühendislik', 'Sorumluluk', 'Tarım'].includes(sigortaTipi)) {
+        digerBilgilerField.style.display = 'block';
+      } else {
+        digerBilgilerField.style.display = 'none';
+      }
+    }
+  </script>
+  
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>İstem Sigorta</h1>
+      <button id="menu-toggle" class="hamburger">&#9776;</button>
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Kurumsal</a></li>
+          <li><a href="services.html">Hizmetler</a></li>
+          <li><a href="teklif.html">Teklif Al</a></li>
+          <li><a href="contact.html" class="active">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="offer-form container">
+      <h2>Teklif Al</h2>
+      <form action="https://formspree.io/f/meoggvoj" method="POST">
+        <input type="text" name="ad_soyad" placeholder="Ad Soyad" required>
+        <input type="email" name="email" placeholder="E-Posta Adresi" required>
+        <input type="tel" name="telefon" placeholder="Telefon Numarası" required>
+        
+        <select name="sigorta_tipi" onchange="showFields()" required>
+          <option value="">Sigorta Türü Seçiniz</option>
+          <option value="Kasko">Kasko Sigortası</option>
+          <option value="Trafik">Zorunlu Trafik Sigortası</option>
+          <option value="Sağlık">Sağlık Sigortası</option>
+          <option value="Tamamlayıcı Sağlık">Tamamlayıcı Sağlık Sigortası</option>
+          <option value="Hayat">Hayat Sigortası</option>
+          <option value="Konut">Konut Sigortası</option>
+          <option value="DASK">DASK (Zorunlu Deprem Sigortası)</option>
+          <option value="İşyeri">İşyeri Sigortası</option>
+          <option value="Seyahat">Seyahat Sağlık Sigortası</option>
+          <option value="Nakliyat">Nakliyat Sigortası</option>
+          <option value="Mühendislik">Mühendislik Sigortaları</option>
+          <option value="Sorumluluk">Sorumluluk Sigortaları</option>
+          <option value="Tarım">Tarım Sigortaları (TARSİM)</option>
+        </select>
+    
+        <input type="text" id="arac-plakasi" name="arac_plakasi" placeholder="Araç Plakası" style="display: none;">
+    
+        <textarea id="diger-bilgiler" name="diger_bilgiler" rows="4" placeholder="Diğer Bilgiler" style="display: none;"></textarea>
+    
+        <textarea name="mesaj" rows="5" placeholder="Ek Mesajınız (İsteğe Bağlı)"></textarea>
+        
+        <button type="submit">Gönder</button>
+      </form>
+      <div id="form-success">
+        Mesajınız başarıyla gönderildi! Teşekkür ederiz.
+        <button class="close-btn" onclick="document.getElementById('form-success').style.display = 'none';">×</button>
+      </div>
+      
+    </section>
+    
+    
+  </main>
+
+  <footer>
+    <p>© 2025 İstem Sigorta. Tüm hakları saklıdır.Selçuk GÜNDÜÇ tarafından geliştirilmiş bir sitedir.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      const successDiv = document.getElementById("form-success");
+  
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+  
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+  
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            headers: {
+              "Accept": "application/json"
+            },
+            body: formData
+          });
+  
+          if (response.ok) {
+            form.reset(); // formu temizle
+            successDiv.style.display = "block"; // mesajı göster
+            setTimeout(function() {
+              successDiv.classList.remove("show");
+            }, 5000);
+          } else {
+            alert("Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+          }
+        } catch (error) {
+          alert("Sunucuya ulaşılamadı. Lütfen daha sonra tekrar deneyin.");
+        }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+  
+      toggle.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+      });
+    });
+  </script>
+  
+</body>
+</html>
